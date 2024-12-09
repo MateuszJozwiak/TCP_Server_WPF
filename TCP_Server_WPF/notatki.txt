@@ -1,0 +1,8 @@
+﻿Przekazywanie dziala
+
+Do Zrobienia:
+- Wzor projektowy
+- kontener na dane
+- czytanie wielu okien
+- JSON
+- XML
