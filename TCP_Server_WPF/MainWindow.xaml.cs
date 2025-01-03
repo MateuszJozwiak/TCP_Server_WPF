@@ -11,6 +11,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
+using System.Security.Cryptography.X509Certificates;
+using TCP_Server_WPF.Controller;
 
 namespace TCP_Server_WPF
 {
@@ -19,21 +21,24 @@ namespace TCP_Server_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int _frequencyValue=1;
+        
         public MainWindow()
         {
             InitializeComponent();
-
             btnStart.Click += btnStart_Click;
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            SignalType okno = new SignalType(Convert.ToInt32(txbId),txbType.ToString(),Convert.ToDouble(txtMin),Convert.ToDouble(txtMax),1);
+            MainWindowController CreateNewWindow = new MainWindowController();
+            CreateNewWindow.StartNewWindow(this);
         }
 
         private void BtnUpload(object sender, RoutedEventArgs e)
         {
-
+            MainWindowController CreateNewWindow = new MainWindowController();
+            CreateNewWindow.UploadConfigurationFromFile(this);
         }
 
         private void BtnNew(object sender, RoutedEventArgs e)
@@ -43,32 +48,20 @@ namespace TCP_Server_WPF
 
         private void BtnClose(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         private void BtnVersion(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Wersja 2.0" ,"Wersja aplikacji",MessageBoxButton.OK,MessageBoxImage.Information);
         }
 
-        private void Set_1Hz(object sender, RoutedEventArgs e)
+        private void Set_Hz(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Set_2Hz(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Set_5Hz(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Set_10Hz(object sender, RoutedEventArgs e)
-        {
-
+            if (Radio_Btn_1.IsChecked == true) { _frequencyValue = 1; }
+            if (Radio_Btn_2.IsChecked == true) { _frequencyValue = 2; }
+            if (Radio_Btn_5.IsChecked == true) { _frequencyValue = 5; }
+            if (Radio_Btn_10.IsChecked == true) { _frequencyValue = 10; }
         }
     }
 }

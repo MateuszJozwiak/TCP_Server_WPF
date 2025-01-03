@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TCP_Server_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="500" Background="DarkGray">
+        Title="MainWindow" Height="400" Width="620" Background="DarkGray">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"></RowDefinition>
@@ -30,10 +30,10 @@
         </Menu>
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
             <Label FontSize="17">Frequency</Label>
-            <RadioButton GroupName="Frequency" FontSize="15" Click="Set_1Hz" IsChecked="True">1 Hz</RadioButton>
-            <RadioButton GroupName="Frequency" FontSize="15" Click="Set_2Hz">2 Hz</RadioButton>
-            <RadioButton GroupName="Frequency" FontSize="15" Click="Set_5Hz">5 Hz</RadioButton>
-            <RadioButton GroupName="Frequency" FontSize="15" Click="Set_10Hz">10 Hz</RadioButton>
+            <RadioButton GroupName="Frequency" Name="Radio_Btn_1" FontSize="15" Click="Set_Hz" IsChecked="True">1 Hz</RadioButton>
+            <RadioButton GroupName="Frequency" Name="Radio_Btn_2" FontSize="15" Click="Set_Hz">2 Hz</RadioButton>
+            <RadioButton GroupName="Frequency" Name="Radio_Btn_5" FontSize="15" Click="Set_Hz">5 Hz</RadioButton>
+            <RadioButton GroupName="Frequency" Name="Radio_Btn_10" FontSize="15" Click="Set_Hz">10 Hz</RadioButton>
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
                     <Label>Type:</Label>

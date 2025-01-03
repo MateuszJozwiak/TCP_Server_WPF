@@ -1,13 +1,17 @@
 ﻿//using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*
-namespace ZadanieNaJunior.JSON
+using System.Windows;
+using TCP_Server_WPF.Controller;
+using TCP_Server_WPF.Model;
+
+namespace TCP_Server_WPF
 {
-    class ReadJSON
+    struct ReadJSON
     {
         /// <summary>
         /// JSON file read function
@@ -21,18 +25,22 @@ namespace ZadanieNaJunior.JSON
                 var Jsonlist = JsonConvert.DeserializeObject<ListJSONSensors>(FileJSON);
                 for (int i = 0; i < Jsonlist.Sensors.Count; i++)
                 {
-                    int number= i;
-                    var NewSettings = new ModbusSettings(Jsonlist.Sensors[i].Id, Jsonlist.Sensors[i].Type, Jsonlist.Sensors[i].MinValue, Jsonlist.Sensors[i].MaxValue, Jsonlist.Sensors[i].Frequency);
-                    var NewWin = new ModbusSimulator(NewSettings);
-                    NewWin.Show();
+                    int number = i;
+                    SignalType NewSettings = new SignalType(Jsonlist.Sensors[i].Id, Jsonlist.Sensors[i].Type, Jsonlist.Sensors[i].MinValue, Jsonlist.Sensors[i].MaxValue, Jsonlist.Sensors[i].Frequency);
+                    SignalDataList.AddSignalSettings(NewSettings);
+                    TCPConnectionWindow NewWin1 = new TCPConnectionWindow(i);
+                    NewWin1.Show();
                 }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 System.Windows.MessageBox.Show(ex.Message);
             }
+
         }
+
     }
 
 }
-        */
+        

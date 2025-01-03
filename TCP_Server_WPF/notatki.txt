@@ -1,8 +1,22 @@
 ﻿Przekazywanie dziala
 
+Przekazywanie dziala w obecnej formie.
+
+Po podzieleniu na obiekty przestalo dzialac, zapewne jest to spowodowane tym ze w oddzielenej klasi tworze nowa instancje tcpConnectionwindow i nie jest to
+to okno stworzone 
+
+ROZWIAZANIE:
+
+public void message(Socket handler,TCPConnectionWindow okno)
+
+nastepnie przy wywolaniu wpisujemy:
+
+NewConnection.message(handler1, this);
+
+gdzie this to wlasnie nasze okno WPF.
+
+
 Do Zrobienia:
 - Wzor projektowy
-- kontener na dane
 - czytanie wielu okien
-- JSON
 - XML

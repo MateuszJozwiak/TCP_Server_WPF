@@ -27,9 +27,9 @@ namespace TCP_Server_WPF.XML
                     var MaxValue = Convert.ToDouble(xmlDoc.GetElementsByTagName("MaxValue")[i].InnerText.ToString());
                     var Frequency = Convert.ToInt32(xmlDoc.GetElementsByTagName("Frequency")[i].InnerText.ToString());
                     var ModbusSetting = new SignalType(Id, Type, MinValue, MaxValue, Frequency);
-                    //var NewWin = new ModbusSimulator(ModbusSetting);
+                    var NewWin = new TCPConnectionWindow(i);
 
-                    //NewWin.Show();
+                    NewWin.Show();
                 }
             }
             catch(Exception ex)

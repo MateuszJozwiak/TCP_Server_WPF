@@ -5,30 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TCP_Server_WPF"
         mc:Ignorable="d"
-        Title="TCPConnectionWindow" Height="450" Width="800">
+        Title="TCPConnectionWindow" Height="450" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.4*"/>
-            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="0.7*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Width="60" Height="30" Content="start" Grid.Column="0"
-                Grid.Row="0" Name="StartTCP"/>
-        <Button Width="60" Height="30" Content=" test" Grid.Column="1"
-                Grid.Row="0"
+        <Button Width="60" Height="30" Content="END" Grid.Column="1"
+                Grid.Row="0" Name="BtnEnd"
                 />
         <RichTextBox Grid.ColumnSpan="2" Grid.Row="1" 
                      Background="LightGray" 
                      VerticalScrollBarVisibility="Auto" 
-                     Name="MessageTCP"/>
+                     Name="MessageTCP" FontSize="16"/>
         <Label Name="ConnectionStatus" 
                Grid.Column="2"
                Width="170"
                Height="60"
                Background="red"/>
+        <TextBlock Name="TxtBox_SignalInformation" 
+                   Grid.Column="2"
+                   Grid.Row="1"
+                   Margin="10"
+                   FontSize="16"/>
     </Grid>
 </Window>
